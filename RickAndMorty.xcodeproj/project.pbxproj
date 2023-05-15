@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4515187E2A12B776001E6F37 /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515187D2A12B776001E6F37 /* RMGetAllCharactersResponse.swift */; };
 		4569BDB52A10DA3A00D77A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BDB42A10DA3A00D77A26 /* AppDelegate.swift */; };
 		4569BDB72A10DA3A00D77A26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BDB62A10DA3A00D77A26 /* SceneDelegate.swift */; };
 		4569BDB92A10DA3A00D77A26 /* RMTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BDB82A10DA3A00D77A26 /* RMTabViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4515187D2A12B776001E6F37 /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		4569BDB12A10DA3A00D77A26 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4569BDB42A10DA3A00D77A26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4569BDB62A10DA3A00D77A26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4515187B2A12B744001E6F37 /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				4569BDCF2A10DC6800D77A26 /* RMLocation.swift */,
+				4569BDD12A10DC7400D77A26 /* RMCharacter.swift */,
+				4569BDD32A10DC7C00D77A26 /* RMEpisode.swift */,
+				4569BE302A1168B800D77A26 /* RMOrigin.swift */,
+				4569BE322A11691E00D77A26 /* RMSingleLocation.swift */,
+				4569BE342A1169DF00D77A26 /* RMCharacterStatus.swift */,
+				4569BE362A116A2700D77A26 /* RMCharacterGender.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		4515187C2A12B750001E6F37 /* APIResponseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				4515187D2A12B776001E6F37 /* RMGetAllCharactersResponse.swift */,
+			);
+			path = APIResponseTypes;
+			sourceTree = "<group>";
+		};
 		4569BDA82A10DA3A00D77A26 = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +129,8 @@
 		4569BDC92A10DB9600D77A26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4569BDCF2A10DC6800D77A26 /* RMLocation.swift */,
-				4569BDD12A10DC7400D77A26 /* RMCharacter.swift */,
-				4569BDD32A10DC7C00D77A26 /* RMEpisode.swift */,
-				4569BE302A1168B800D77A26 /* RMOrigin.swift */,
-				4569BE322A11691E00D77A26 /* RMSingleLocation.swift */,
-				4569BE342A1169DF00D77A26 /* RMCharacterStatus.swift */,
-				4569BE362A116A2700D77A26 /* RMCharacterGender.swift */,
+				4515187C2A12B750001E6F37 /* APIResponseTypes */,
+				4515187B2A12B744001E6F37 /* DataTypes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +261,7 @@
 			files = (
 				4569BE312A1168B800D77A26 /* RMOrigin.swift in Sources */,
 				4569BE332A11691E00D77A26 /* RMSingleLocation.swift in Sources */,
+				4515187E2A12B776001E6F37 /* RMGetAllCharactersResponse.swift in Sources */,
 				4569BE352A1169DF00D77A26 /* RMCharacterStatus.swift in Sources */,
 				4569BE372A116A2700D77A26 /* RMCharacterGender.swift in Sources */,
 				4569BDD92A10DD5100D77A26 /* RMLocationViewController.swift in Sources */,
