@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Type to match the get all characters api response
 struct RMGetAllCharactersResponse: Codable {
     struct Info: Codable {
         let count: Int

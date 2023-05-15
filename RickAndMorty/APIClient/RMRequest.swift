@@ -71,6 +71,8 @@ final class RMRequest {
     }
 }
 
+// MARK: - Convenient RMRequest objects
+
 extension RMRequest {
     static let listCharactersRequest = RMRequest(endpoint: .character)
 }

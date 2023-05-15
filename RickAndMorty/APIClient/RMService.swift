@@ -48,7 +48,7 @@ final class RMService {
                 completion(.failure(error))
             }
         }
-        
+
         task.resume()
     }
 }
@@ -56,6 +56,9 @@ final class RMService {
 // MARK: - Private
 
 extension RMService {
+    /// Construct a URLRequest object to be passed in a task
+    /// - Parameter rmRequest: RMRequest
+    /// - Returns: URLRequest?
     private func request(from rmRequest: RMRequest) -> URLRequest? {
         guard let url = rmRequest.url else { return nil }
 
