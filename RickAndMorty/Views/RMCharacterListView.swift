@@ -8,8 +8,8 @@
 import UIKit
 
 /// VIew that handles showing list of characters, loader, etc
-final class CharacterListView: UIView {
-    private let viewModel = CharacterListViewViewModel()
+final class RMCharacterListView: UIView {
+    private let viewModel = RMCharacterListViewViewModel()
 
     /// Anonymous closure to make loader spinner
     private let spinner: UIActivityIndicatorView = {
@@ -33,8 +33,7 @@ final class CharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
 
-        // todo (js) - Make reusable template
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(RMCharacterCollectionViewCell.self, forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
 
         return collectionView
     }()
@@ -55,7 +54,7 @@ final class CharacterListView: UIView {
     }
 }
 
-extension CharacterListView {
+extension RMCharacterListView {
     private func layout() {
         NSLayoutConstraint.activate([
             // Spinner layout
