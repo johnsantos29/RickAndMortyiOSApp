@@ -28,7 +28,16 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier, for: indexPath) as? RMCharacterCollectionViewCell else {
+            fatalError("Unsupported cell")
+        }
+
+        let viewModel = RMCharacterCollectionViewCellViewModel(
+            characterName: "John",
+            characterStatus: .alive,
+            characterImageUrl: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+        cell.configure(with: viewModel)
+
         return cell
     }
 }

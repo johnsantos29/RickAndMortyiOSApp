@@ -64,11 +64,40 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
 extension RMCharacterCollectionViewCell {
     private func layout() {
         NSLayoutConstraint.activate([
+            // status label
+            statusLabel.heightAnchor.constraint(equalToConstant: 44),
+            statusLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
+            statusLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
+            statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3),
+
+            // name label
+            nameLabel.heightAnchor.constraint(equalToConstant: 44),
+            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
+            nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
+            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -3),
+
+            // image view
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3),
         ])
     }
 
     public func configure(with viewModel: RMCharacterCollectionViewCellViewModel) {
-        // todo (js) - get image, name label, status label in the
-        // charactercollectionviewmodel
+        nameLabel.text = viewModel.characterName
+        statusLabel.text = viewModel.characterStatusText
+        viewModel.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    self?.imageView.image = image
+                }
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
+        }
     }
 }
