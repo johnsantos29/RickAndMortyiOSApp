@@ -35,6 +35,7 @@
 		45CBF34A2A18184D00ABE97E /* RMCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBF3492A18184D00ABE97E /* RMCharacterDetailViewController.swift */; };
 		45CBF34C2A18191400ABE97E /* RMCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBF34B2A18191400ABE97E /* RMCharacterDetailView.swift */; };
 		45CBF34E2A18193400ABE97E /* RMCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBF34D2A18193400ABE97E /* RMCharacterDetailViewViewModel.swift */; };
+		45CBF3502A182B2B00ABE97E /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBF34F2A182B2B00ABE97E /* RMFooterLoadingCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		45CBF3492A18184D00ABE97E /* RMCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewController.swift; sourceTree = "<group>"; };
 		45CBF34B2A18191400ABE97E /* RMCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailView.swift; sourceTree = "<group>"; };
 		45CBF34D2A18193400ABE97E /* RMCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
+		45CBF34F2A182B2B00ABE97E /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				451518812A12BC9E001E6F37 /* RMCharacterListView.swift */,
 				4551A9052A14E1C00035CE76 /* RMCharacterCollectionViewCell.swift */,
 				45CBF34B2A18191400ABE97E /* RMCharacterDetailView.swift */,
+				45CBF34F2A182B2B00ABE97E /* RMFooterLoadingCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				4569BE352A1169DF00D77A26 /* RMCharacterStatus.swift in Sources */,
 				4569BE372A116A2700D77A26 /* RMCharacterGender.swift in Sources */,
 				45CBF34A2A18184D00ABE97E /* RMCharacterDetailViewController.swift in Sources */,
+				45CBF3502A182B2B00ABE97E /* RMFooterLoadingCollectionReusableView.swift in Sources */,
 				4569BDD92A10DD5100D77A26 /* RMLocationViewController.swift in Sources */,
 				4569BDD42A10DC7C00D77A26 /* RMEpisode.swift in Sources */,
 				4569BDB92A10DA3A00D77A26 /* RMTabViewController.swift in Sources */,

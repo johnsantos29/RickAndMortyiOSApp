@@ -29,7 +29,7 @@ final class RMCharacterListViewViewModel: NSObject {
     }
 
     private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
-    
+
     private var apiInfo: RMGetAllCharactersResponse.Info? = nil
 
     /// Fetch initial set of characters (20)
@@ -51,9 +51,7 @@ final class RMCharacterListViewViewModel: NSObject {
     }
 
     /// Paginate if additional characters are needed
-    public func fetchAdditionalCharacters() {
-        // fetch characters here
-    }
+    public func fetchAdditionalCharacters() {}
 
     public var shouldShowLoadMoreIndicator: Bool {
         return apiInfo?.next != nil
@@ -76,6 +74,28 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource {
         cell.configure(with: viewModel)
 
         return cell
+    }
+
+    // footer
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter, let footer = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier,
+            for: indexPath) as? RMFooterLoadingCollectionReusableView
+        else {
+            fatalError("Unsupported")
+        }
+
+        footer.startAnimating()
+        return footer
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard shouldShowLoadMoreIndicator else {
+            return .zero
+        }
+
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
 }
 
