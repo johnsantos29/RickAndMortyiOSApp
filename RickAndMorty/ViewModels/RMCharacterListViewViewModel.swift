@@ -7,10 +7,13 @@
 
 import UIKit
 
-// todo (js) - setup protocol delegate
-// to notify collection view to update
+protocol RMCharacterListViewViewModelDelegate: AnyObject {
+    func didLoadInitialCharacters()
+}
 
 final class RMCharacterListViewViewModel: NSObject {
+    public weak var delegate: RMCharacterListViewViewModelDelegate?
+
     private var characters: [RMCharacter] = [] {
         didSet {
             for character in characters {
@@ -31,6 +34,10 @@ final class RMCharacterListViewViewModel: NSObject {
             case .success(let responseModel):
                 let results = responseModel.results
                 self?.characters = results
+
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
             case .failure(let error):
                 print(String(describing: error))
             }
