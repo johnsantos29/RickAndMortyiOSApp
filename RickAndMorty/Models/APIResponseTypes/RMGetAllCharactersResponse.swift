@@ -7,13 +7,12 @@
 
 import Foundation
 
-
 /// Type to match the get all characters api response
 struct RMGetAllCharactersResponse: Codable {
     struct Info: Codable {
         let count: Int
         let pages: Int
-        let nextUrl: String?
+        let next: String?
         let prev: String?
     }
 
