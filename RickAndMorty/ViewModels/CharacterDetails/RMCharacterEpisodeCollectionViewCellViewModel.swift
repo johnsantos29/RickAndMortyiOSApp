@@ -7,12 +7,26 @@
 
 import Foundation
 
+protocol RMEpisodeDataRender {
+    var name: String { get }
+    var air_date: String { get }
+    var episode: String { get }
+}
+
 final class RMCharacterEpisodeCollectionViewCellViewModel {
     private let episodeDataUrl: URL?
-    
     private var isFetching = false
+    private var dataBlock: ((RMEpisodeDataRender) -> Void)?
     
-    private var episode: RMEpisode?
+    private var episode: RMEpisode? {
+        didSet {
+            guard let model = episode else {
+                return
+            }
+            
+            dataBlock?(model)
+        }
+    }
     
     // MARK: - Init
     
@@ -22,6 +36,9 @@ final class RMCharacterEpisodeCollectionViewCellViewModel {
     
     public func fetchEpisode() {
         guard !isFetching else {
+            if let model = episode {
+                dataBlock?(model)
+            }
             return
         }
         
@@ -36,10 +53,18 @@ final class RMCharacterEpisodeCollectionViewCellViewModel {
         RMService.shared.execute(request, expecting: RMEpisode.self) { [weak self] result in
             switch result {
             case .success(let model):
-                self?.episode = model
+                DispatchQueue.main.async {
+                    self?.episode = model
+                }
             case .failure(let failure):
                 print(String(describing: failure))
             }
         }
+    }
+}
+
+extension RMCharacterEpisodeCollectionViewCellViewModel {
+    public func registerForData(_ block: @escaping (RMEpisodeDataRender) -> Void) {
+        dataBlock = block
     }
 }
