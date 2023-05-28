@@ -17,7 +17,7 @@ final class RMRequest {
     }
     
     /// Desired endpoint
-    private let endpoint: RMEndpoint
+    public let endpoint: RMEndpoint
     
     /// Path components, if any
     private let pathComponents: [String]
@@ -68,7 +68,6 @@ final class RMRequest {
         self.pathComponents = pathComponents
         self.queryParameters = queryParameters
     }
-    
     
     /// Attempt to create request
     /// - Parameter url: url to parse
